@@ -1,38 +1,52 @@
 // giphy key : aWmCF38aWZNhbJoi236yO2yuW4smGy9q
 // url "https://api.giphy.com/v1/" 
 
-//Suejin's Javascript for the two apis:
-var ApiKey = "774092c9-0b11-4331-9432-a0aac1f1ca4a"
-var link = "https://api.thedogapi.com/v1/images/search" + "?api_key=" + ApiKey;
-var containerEl = $("#container")
-var link2 = "https://namey.muffinlabs.com/name.json?frequency=all"
+$(document).ready(function() {
+    var containerEl = $("#container");
+    var textNameEl = $("#textName");
+    var dogImageEl = $("#dogImage");
+    //Suejin's Javascript for the two apis:
+    var ApiKey = "774092c9-0b11-4331-9432-a0aac1f1ca4a";
+    var dogLink = "https://api.thedogapi.com/v1/images/search" + "?api_key=" + ApiKey;
+    var nameLink = "https://namey.muffinlabs.com/name.json?frequency=all";
 
-fetch (link)
-    .then(function(response) {
-        console.log(response);
-        return response.json();
-    })
-    .then(function(data){
-        console.log(data);
-        var url = document.createElement("img");
-        url.src = data[0].url;
-        url.width= "200"
-        containerEl.append(url);
-    })
+fetchName();
+fetchDog();
+
+$("#btnImage").on("click", function() {
+    fetchDog();
+})
 
 
-fetch(link2)
-    .then(function(response) {
-        console.log(response);
-        return response.json();
-    })
-    .then(function(data){
-        console.log(data);
-        var names = document.createElement("h2");
-        names.textContent = data[0];
-        containerEl.append(names);
-    })
 
-    .catch(err => {
-        console.error(err);
-    });
+function fetchName () {
+    fetch(nameLink)
+        .then(function(response) {
+            //console.log(response);
+            return response.json();
+        })
+        .then(function(data){
+            //console.log(data);
+            var names = $("<h2>");
+            names.text(data[0])
+            textNameEl.append(names);
+        })
+}
+
+function fetchDog() {
+    fetch (dogLink)
+        .then(function(response) {
+            console.log(response);
+            return response.json();
+        })
+        .then(function(data){
+            //console.log(data);
+            var dogImg = $("<img>");
+            dogImg.src = data[0].url;
+            dogImg.width= "200"
+            dogImageEl.append(dogImg);
+        })
+}
+
+
+})
