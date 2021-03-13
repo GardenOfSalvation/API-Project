@@ -5,6 +5,8 @@
 var ApiKey = "774092c9-0b11-4331-9432-a0aac1f1ca4a"
 var link = "https://api.thedogapi.com/v1/images/search" + "?api_key=" + ApiKey;
 var containerEl = $("#container")
+var displayName = $("#displayname")
+var displayImg = $("#displayImg")
 var link2 = "https://namey.muffinlabs.com/name.json?frequency=all"
 
 fetch (link)
@@ -17,7 +19,7 @@ fetch (link)
         var url = document.createElement("img");
         url.src = data[0].url;
         url.width= "200"
-        containerEl.append(url);
+        displayImg.append(url);
     })
 
 
@@ -30,7 +32,8 @@ fetch(link2)
         console.log(data);
         var names = document.createElement("h2");
         names.textContent = data[0];
-        containerEl.append(names);
+        displayName.append(names);
+        console.log(names)
     })
 
     .catch(err => {

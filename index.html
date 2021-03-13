@@ -12,18 +12,27 @@
 </head>
 
 <body>
-    <h1>This is our title</h1>
-    <div id="container">This is the main container?
+    <h1>This is our title </h1>
+
+    <div id="container" class="grid grid-flow-col auro-cols-max">
         <div>
             <div id="minicontainer-1">
-                <button id="btnName" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    click for new name
-                </button>
-                <button id="btnImage" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    click for a new dog
-                </button>
+                <div>
+                    <p id="displayName"></p>
+                    <button id="btnName" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        click for new name
+                    </button>
+                </div>
+                <div>
+                    <p id="displayImg"></p>
+                    <button id="btnImage" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        click for a new dog
+                    </button>
+                </div>
+
 
             </div>
+
             <div id="minicontainer-2">
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                     click for new combo
@@ -34,6 +43,7 @@
                 </button>
 
             </div>
+            
             <div id="minicontainer-3">
                 <p>Favorites</p>
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
