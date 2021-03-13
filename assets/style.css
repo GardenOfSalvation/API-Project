@@ -1,0 +1,25 @@
+
+body {
+    font-size: 30px;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  h1,
+  h2 {
+    text-align: center;
+  }
+  
+  button {
+      border-radius: 8px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 1.2em;
+      letter-spacing: 0.21px;
+      line-height: 16px;
+      padding: 50px 50px;
+      transition-duration: 0.15s;
+      transition-property: background-color;
+      margin: 0.6em auto;
+      font-size: 20px;
+    }
+  
