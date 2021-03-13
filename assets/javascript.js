@@ -2,7 +2,6 @@
 // url "https://api.giphy.com/v1/" 
 
 $(document).ready(function() {
-    var containerEl = $("#container");
     var textNameEl = $("#textName");
     var dogImageEl = $("#dogImage");
     //Suejin's Javascript for the two apis:
@@ -42,7 +41,7 @@ function fetchDog() {
         .then(function(data){
             //console.log(data);
             var dogImg = $("<img>");
-            dogImg.src = data[0].url;
+            dogImg.attr("src", data[0].url);
             dogImg.width= "200"
             dogImageEl.append(dogImg);
         })
