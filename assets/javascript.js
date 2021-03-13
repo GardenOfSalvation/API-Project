@@ -2,8 +2,8 @@
 // url "https://api.giphy.com/v1/" 
 
 $(document).ready(function() {
-    var textNameEl = $("#textName");
-    var dogImageEl = $("#dogImage");
+    var textNameEl = $("#displayName");
+    var dogImageEl = $("#displayImg");
     //Suejin's Javascript for the two apis:
     var ApiKey = "774092c9-0b11-4331-9432-a0aac1f1ca4a";
     var dogLink = "https://api.thedogapi.com/v1/images/search" + "?api_key=" + ApiKey;
@@ -42,7 +42,7 @@ function fetchDog() {
             //console.log(data);
             var dogImg = $("<img>");
             dogImg.attr("src", data[0].url);
-            dogImg.width= "200"
+            dogImg.width("400px")
             dogImageEl.append(dogImg);
         })
 }
